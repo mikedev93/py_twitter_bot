@@ -4,12 +4,12 @@ from giphy_client.rest import ApiException
 from random import randint
 
 # set the apikey and limit
-file = open('gif_key.txt', 'r', encoding='utf8')
+file_e = open('gif_key.txt', 'r')
 
 # create an instance of the API class
 api_instance = giphy_client.DefaultApi()
-api_key = str(file.readline().strip())
-file.close()
+api_key = str(file_e.readline().strip())
+file_e.close()
 # str | Search query term or phrase.
 q = 'piano'
 
@@ -53,16 +53,16 @@ except ApiException as e:
 
 # Opens file with name of "key.txt", which has all the
 # necessary Keys and Tokens to access the Bot Twitter Account
-file = open('key.txt', 'r', encoding='utf8')
+file_e = open('key.txt', 'r')
 
 # Reads each line.
 # The file only contains four lines stored in plain text, no commas and the end
-API_KEY = str(file.readline().strip())
-API_SECRET = str(file.readline().strip())
-ACCESS_TOKEN = str(file.readline().strip())
-ACCESS_TOKEN_SECRET = str(file.readline().strip())
+API_KEY = str(file_e.readline().strip())
+API_SECRET = str(file_e.readline().strip())
+ACCESS_TOKEN = str(file_e.readline().strip())
+ACCESS_TOKEN_SECRET = str(file_e.readline().strip())
 
-file.close()
+file_e.close()
 
 # Using Twython to handle the Twitter API
 twitter_client = Twython(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
